@@ -15,9 +15,9 @@ async def on_message(message):
     if message.author.bot:
         return
     # 「/neko」と発言したら「にゃーん」が返る処理
-    if message.content == '/neko':
+    if message.content == 'neko':
         await message.channel.send('にゃーん')
-    if message.content == 'rand':
+    if message.content == '/rand':
         num = random.randint(1,10)
         await message.channel.send('num')
     # メンバーのリストを取得して表示
