@@ -19,7 +19,7 @@ async def on_message(message):
         await message.channel.send('にゃーん')
         await message.channel.send('にゃーん')
     if message.content == '/rand':
-        num = random.randint(1,10)
+        int num = random.randint(1,10)
         await message.channel.send('num')
     # メンバーのリストを取得して表示
     if message.content == '/members':
