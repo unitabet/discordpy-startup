@@ -17,11 +17,12 @@ async def on_message(message):
     # 「/neko」と発言したら「にゃーん」が返る処理
     if message.content == '/neko':
         await message.channel.send('にゃーん')
+    if message.content == '/ping':
+        await message.channel.send('pong')
     
 
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-
 
 bot.run(token)
