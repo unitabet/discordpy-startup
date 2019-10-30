@@ -22,6 +22,8 @@ async def on_message(message):
     if message.content == '/roleset':
         role = discord.utils.get(message.guild.roles, name='うんこ')
         await message.author.add_roles(role)
+        reply = f'{message.author.mention} うんこ！'
+        await message.channel.send(reply)
         
     # メンバーのリストを取得して表示
     if message.content == '/members':
