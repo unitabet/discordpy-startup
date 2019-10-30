@@ -10,6 +10,12 @@ async def on_command_error(ctx, error):
     await ctx.send(str(error))
 
 @bot.event
+async def on_ready():
+    CHANNEL_ID = 635047342546092085
+    channel = client.get_channel(CHANNEL_ID)
+    await channel.send('おはよう！')
+
+@bot.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
