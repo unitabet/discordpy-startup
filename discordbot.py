@@ -10,12 +10,6 @@ async def on_command_error(ctx, error):
     await ctx.send(str(error))
 
 @bot.event
-async def on_ready():
-    CHANNEL_ID = 635047342546092085
-    channel = client.get_channel(CHANNEL_ID)
-    await channel.send('おはよう！')
-
-@bot.event
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
@@ -25,6 +19,21 @@ async def on_message(message):
         await message.channel.send('にゃーん')
     if message.content == '/ping':
         await message.channel.send('pong')
+    # メンバーのリストを取得して表示
+    if message.content == '/members':
+        await message.channel.send(message.guild.members)
+    # 役職のリストを取得して表示
+    if message.content == '/roles':
+        await message.channel.send(message.guild.roles)
+    # テキストチャンネルのリストを取得して表示
+    if message.content == '/text_channels':
+        await message.channel.send(message.guild.text_channels)
+    # ボイスチャンネルのリストを取得して表示
+    if message.content == '/voice_channels':
+        await message.channel.send(message.guild.voice_channels)
+    # カテゴリチャンネルのリストを取得して表示
+    if message.content == '/category_channels':
+        await message.channel.send(message.guild.categories)
     
 
 @bot.command()
