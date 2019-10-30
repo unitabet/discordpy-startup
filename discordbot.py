@@ -22,6 +22,9 @@ async def on_message(message):
     if message.content == '/rand':
         num = random.randint(1,10)
         await message.channel.send(num)
+    if message.content.startswith('/test'):
+        role = discord.utils.get(message.guild.roles, name='陰キャ')
+        await message.author.add_roles(role)
     # メンバーのリストを取得して表示
     if message.content == '/members':
         await message.channel.send(message.guild.members)
