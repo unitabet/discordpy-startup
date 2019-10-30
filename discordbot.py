@@ -19,6 +19,10 @@ async def on_message(message):
     # 「/state」と発言したら「active」が返る処理、起動確認用
     if message.content == '/state':
         await message.channel.send('active')
+    if message.content == '/roleset':
+        role = discord.utils.get(message.guild.roles, name='うんこ')
+        await message.author.add_roles(role)
+        
     # メンバーのリストを取得して表示
     if message.content == '/members':
         await message.channel.send(message.guild.members)
