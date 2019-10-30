@@ -21,8 +21,7 @@ async def on_message(message):
         await message.channel.send('active')
     # 「/roleset」と発言したら乱数に応じた役職が付与される機能、拡張性追加のためにリスト参照型に変更予定
     if message.content == '/roleset':
-        rand = random.randint(0,50)
-        rand = 0
+        rand = random.randint(0,9999)
         if rand == 0:
                 role = discord.utils.get(message.guild.roles, name='神')
                 await message.author.add_roles(role)
@@ -32,6 +31,41 @@ async def on_message(message):
                 role = discord.utils.get(message.guild.roles, name='パリピ')
                 await message.author.add_roles(role)
                 reply = f'{message.author.mention} はパリピです。'
+                await message.channel.send(reply)
+        elif rand < 150:
+                role = discord.utils.get(message.guild.roles, name='DEMOGORGON')
+                await message.author.add_roles(role)
+                reply = f'{message.author.mention} はDEMOGORGONです。'
+                await message.channel.send(reply)
+        elif rand < 350:
+                role = discord.utils.get(message.guild.roles, name='Premium　KINTAMA')
+                await message.author.add_roles(role)
+                reply = f'{message.author.mention} はPremium　KINTAMAです。'
+                await message.channel.send(reply)
+        elif rand < 1000:
+                role = discord.utils.get(message.guild.roles, name='厨二病')
+                await message.author.add_roles(role)
+                reply = f'{message.author.mention} は厨二病です。'
+                await message.channel.send(reply)
+        elif rand < 2500:
+                role = discord.utils.get(message.guild.roles, name='ヤドン秋山')
+                await message.author.add_roles(role)
+                reply = f'{message.author.mention} はヤドン秋山です。'
+                await message.channel.send(reply)
+        elif rand < 4500:
+                role = discord.utils.get(message.guild.roles, name='ショーン')
+                await message.author.add_roles(role)
+                reply = f'{message.author.mention} はショーンです。'
+                await message.channel.send(reply)
+        elif rand < 9500:
+                role = discord.utils.get(message.guild.roles, name='陰キャ')
+                await message.author.add_roles(role)
+                reply = f'{message.author.mention} は陰キャです。'
+                await message.channel.send(reply)
+        elif rand < 10000:
+                role = discord.utils.get(message.guild.roles, name='うんこ')
+                await message.author.add_roles(role)
+                reply = f'{message.author.mention} はうんこ。'
                 await message.channel.send(reply)
     if message.content == '/rand':
         rand = random.randint(0,9999)   
