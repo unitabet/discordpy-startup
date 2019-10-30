@@ -21,11 +21,11 @@ async def on_message(message):
         await message.channel.send('active')
     # 「/roleset」と発言したら乱数に応じた役職が付与される機能、拡張性追加のためにリスト参照型に変更予定
     if message.content == '/roleset':
-        rand = random.randint(0,50)
+        rand = random.randint(0,9999)
         if rand == 0:
-                role = discord.utils.get(message.guild.roles, name='陰キャ')
+                role = discord.utils.get(message.guild.roles, name='神')
                 await message.author.add_roles(role)
-                reply = f'{message.author.mention} '
+                reply = f'{message.author.mention} は神です…新たなる神話の始まりだ。'
                 await message.channel.send(reply)
         elif rand < 50:
                 role = discord.utils.get(message.guild.roles, name='パリピ')
