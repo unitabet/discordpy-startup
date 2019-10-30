@@ -25,7 +25,7 @@ async def on_message(message):
         if rand == 0:
                 role = discord.utils.get(message.guild.roles, name='神')
                 await message.author.add_roles(role)
-                reply = f'{message.author.mention} は神です…新たなる神話の始まりだ。'
+                reply = f'{message.author.mention} は神です。新たなる神話の始まりだ。'
                 await message.channel.send(reply)
         elif rand < 50:
                 role = discord.utils.get(message.guild.roles, name='パリピ')
