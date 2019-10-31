@@ -18,9 +18,9 @@ async def on_message(message):
         return
     # 「/state」と発言したら「active」が返る処理、起動確認用
     if message.content == '/state':
-        await message.channel.send('```➢現在稼働中です \n  ver1.1.12です \n  定期メンテナンスは毎週日曜の0時からです```')
+        await message.channel.send('```➢現在稼働中です \n  ver1.1.1です \n  定期メンテナンスは毎週日曜の0時からです```')
     if message.content == '/help':
-        await message.channel.send('```➢/state \n  稼働状況を確認します \n 　\n　/roleset \n　役職をランダムに付与します \n 　\n  /members \n  現在サーバーに所属するメンバーをすべて表示します \n　\n  /roles \n　現在サーバーにある役職をすべて表示します \n　\n  /text_channels \n　現在サーバーにあるテキストチャンネルをすべて表示します \n　\n  /voice_channels \n　現在サーバーにあるテキストチャンネルをすべて表示します \n　\n  /category_channels \n　現在サーバーにあるカテゴリチャンネルをすべて表示します```')
+        await message.channel.send('```➢/state \n  稼働状況を確認します \n 　\n　/roleset \n　役職をランダムに付与します \n 　\n　/probability \n　rolesetコマンドの確率内訳を表示します \n 　\n  /members \n  現在サーバーに所属するメンバーをすべて表示します \n　\n  /roles \n　現在サーバーにある役職をすべて表示します \n　\n  /text_channels \n　現在サーバーにあるテキストチャンネルをすべて表示します \n　\n  /voice_channels \n　現在サーバーにあるテキストチャンネルをすべて表示します \n　\n  /category_channels \n　現在サーバーにあるカテゴリチャンネルをすべて表示します```')
     # 「/roleset」と発言したら乱数に応じた役職が付与される機能、拡張性追加のためにリスト参照型に変更予定
     if message.content == '/roleset':
         rand = random.randint(0,9999)
@@ -69,6 +69,9 @@ async def on_message(message):
                 await message.author.add_roles(role)
                 reply = f'{message.author.mention} はうんこ。'
                 await message.channel.send(reply)
+    if message.content == '/probability':
+        await message.channel.send('```➢[神] 0.01% \n  [パリピ] 0.49% \n  [デモゴルゴン] 1.0% \n [Premiam Kintama] 2.0%  \n [厨二病] 6.5%  \n [ヤドン秋山] 15.0%  \n [ショーン] 20.0%  \n [陰キャ] 50.0%  \n [うんこ] 5.0% ```')
+    # 0~9999の間で乱数を返す
     if message.content == '/rand':
         rand = random.randint(0,9999)   
         await message.channel.send(rand)
@@ -88,6 +91,7 @@ async def on_message(message):
     if message.content == '/category_channels':
         await message.channel.send(message.guild.categories)
     
+
 
 @bot.command()
 async def ping(ctx):
