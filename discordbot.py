@@ -70,7 +70,7 @@ async def on_message(message):
                 reply = f'{message.author.mention} はうんこ。'
                 await message.channel.send(reply)
     if message.content == '/probability':
-        await message.channel.send('```➢[神] 0.01% \n  [パリピ] 0.49% \n  [デモゴルゴン] 1.0% \n [Premiam Kintama] 2.0%  \n [厨二病] 6.5%  \n [ヤドン秋山] 15.0%  \n [ショーン] 20.0%  \n [陰キャ] 50.0%  \n [うんこ] 5.0% ```')
+        await message.channel.send('```➢[神] 0.01% \n　[パリピ] 0.49% \n　[デモゴルゴン] 1.0% \n　[Premiam Kintama] 2.0%  \n　[厨二病] 6.5%  \n　[ヤドン秋山] 15.0%  \n　[ショーン] 20.0%  \n　[陰キャ] 50.0%  \n　[うんこ] 5.0% ```')
     # 0~9999の間で乱数を返す
     if message.content == '/rand':
         rand = random.randint(0,9999)   
