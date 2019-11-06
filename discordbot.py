@@ -17,12 +17,10 @@ async def on_command_error(ctx, error):
 async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
-        return
- 　  if message.content == '/test':
-       await message.channel.send(message.author)         
+        return      
     # 「/state」と発言したら「active」が返る処理、起動確認用
     if message.content == '/state':
-        await message.channel.send('```➢現在稼働中です \n  ver1.1.17です \n  定期メンテナンスは毎週日曜の0時からです```')
+        await message.channel.send('```➢現在稼働中です \n  ver1.1.23です \n  定期メンテナンスは毎週日曜の0時からです```')
     if message.content == '/help':
         await message.channel.send('```➢/state \n  稼働状況を確認します \n 　\n　/roleset \n　役職をランダムに付与します \n 　\n　/probability \n　rolesetコマンドの確率内訳を表示します \n 　\n  /members \n  現在サーバーに所属するメンバーをすべて表示します \n　\n  /roles \n　現在サーバーにある役職をすべて表示します \n　\n  /text_channels \n　現在サーバーにあるテキストチャンネルをすべて表示します \n　\n  /voice_channels \n　現在サーバーにあるテキストチャンネルをすべて表示します \n　\n  /category_channels \n　現在サーバーにあるカテゴリチャンネルをすべて表示します```')
     # 「/roleset」と発言したら乱数に応じた役職が付与される機能、拡張性追加のためにリスト参照型に変更予定
