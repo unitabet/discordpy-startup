@@ -18,7 +18,10 @@ async def on_message(message):
     # メッセージ送信者がBotだった場合は無視する
     if message.author.bot:
         return
-    # 発言した人のIDを出力     
+    # 発言した人のIDを出力
+    if message.content == '/userID':
+        id = mesage.author.id
+        await.message.channel.send(id)
     # 「/state」と発言したら「active」が返る処理、起動確認用
     if message.content == '/state':
         await message.channel.send('```➢現在稼働中です \n  ver1.1.17です \n  定期メンテナンスは毎週日曜の0時からです```')
